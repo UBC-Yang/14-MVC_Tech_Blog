@@ -60,7 +60,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
         include: [{ model: User, attributes: ["username"] }],
       });
       const posts = postData.map((post) => post.get({ plain: true }));
-  
       res.render("dashboard", {
         posts,
         logged_in: req.session.logged_in,
@@ -109,9 +108,7 @@ router.get("/editpost/:id", async (req, res) => {
           },
         ],
       });
-  
       const post = postData.get({ plain: true });
-  
       res.render("editpost", {
         ...post,
         logged_in: req.session.logged_in,
