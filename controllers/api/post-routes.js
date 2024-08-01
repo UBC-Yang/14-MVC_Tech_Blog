@@ -16,7 +16,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Update post
-route.put('/:id', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const updatePost = await Post.update(req.body, {
             where: { id: req.params.id }
