@@ -1,0 +1,19 @@
+<main class="container">
+    <div class="row" id="posts-container">
+        {{#each posts}}
+            <div class="col-md-4">
+                <div class="card-header">
+                    <h2>
+                        <a href="/post/{{id}}">{{post.title}}</a>
+                    </h2>
+                    <p>
+                        Created by {{user.username}} on {{format_date createdAt}}
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p>{{post.content}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</main>

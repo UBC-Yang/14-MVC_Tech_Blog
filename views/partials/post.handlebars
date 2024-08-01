@@ -1,0 +1,31 @@
+{{!-- views/post.handlebars file --}}
+<main class="container mt-5">
+  <article>
+    <h1 class="custom-text-color">{{title}}</h1>
+    <p class="text-dark">{{content}}</p>
+  </article>
+  {{#if logged_in}}
+    <form class="new-comment-form" class="mb-3">
+      <div class="mb-3">
+        <label for="comment" class="form-label text-dark">Comments:</label>
+        <textarea
+          class="form-control"
+          style="font-style: italic;"
+          id="content-new-comment"
+          rows="3"
+          placeholder="Add a comment..."
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+  {{/if}}
+  <h2 class="custom-text-color">Comment History:</h2>
+  {{#each comments}}
+    <div class="comment mb-3 text-dark">
+      <p style="font-style: italic;">{{comment_text}}</p>
+      <p class="custom-text-color">By {{user.username}} on {{format_date createdAt}}</p>
+    </div>
+  {{/each}}
+</main>
+
+<script src="/public/js/comment.js"></script>
