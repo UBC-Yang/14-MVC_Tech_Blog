@@ -2,13 +2,13 @@ const { Post } = require("../models");
 
 const postData = [
   {
-    title: "The Road",
-    content: "A post-apocalyptic novel that follows a father and his young son as they traverse a desolate landscape, struggling to survive. The novel explores themes of survival, love, and the will to live.",
+    title: "Why MVC is so important",
+    content: "MVC allows for developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.",
     user_id: 1,
   },
   {
-    title: "Life of Pi",
-    content: "A young boy named Pi survives a shipwreck and is left stranded on a lifeboat with a Bengal tiger named Richard Parker. The novel is a story of survival, faith, and the relationship between humans and animals.",
+    title: "Authentication vs. Authorization",
+    content: "There is a difference between authentication and authorization. Authentication means confirming your own identity, whereas authorization means being allowed to access to the system.",
     user_id: 2,
   },
 ];

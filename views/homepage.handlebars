@@ -1,17 +1,20 @@
 <main class="container">
     <div class="row" id="posts-container">
         {{#each posts}}
-            <div class="col-md-4">
-                <div class="card-header">
-                    <h2>
-                        <a href="/post/{{id}}">{{post.title}}</a>
-                    </h2>
-                    <p>
-                        Created by {{user.username}} on {{format_date createdAt}}
-                    </p>
-                </div>
-                <div class="card-body">
-                    <p>{{post.content}}</p>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header post-card-header">
+                        <h2 class="post-title">
+                            <a href="/post/{{id}}" class="post-link">{{title}}</a>
+                        </h2>
+                        <p class="post-meta">
+                            Created by {{user.username}} on {{format_date createdAt}}
+                        </p>
+                    </div>
+                    <hr class="post-divider">
+                    <div class="card-body post-content">
+                        <p>{{content}}</p>
+                    </div>
                 </div>
             </div>
         {{/each}}

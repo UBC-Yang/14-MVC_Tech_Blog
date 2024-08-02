@@ -1,16 +1,30 @@
 <main class="container mt-5">
     <div class="row">
         <div class="col-12">
-            <h2 class="mb-4">Your Dashboard</h2>
-            <a href="/new-post"><button class="btn mt-3">New Post</button></a>
+            <h1 class="mb-4">Your Dashboard</h1>
+            <br>
+            <a href="/new-post"><button class="btn mt-3 btn-primary">New Post</button></a>
         </div>
     </div>
     <br>
-    {{#each posts}}
-    <div class="post-container mb-3">
-        <h2><a href="/post/{{id}}">{{title}}</a></h2>
-        <a href="/edit-post"><button class="btn btn-secondary">Edit Post</button></a>
-        <button class="btn bg-custom-delete delete-post" data-post-id="{{id}}">Delete</button>
+    <div class="row">
+        {{#each posts}}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header post-card-header">
+                        <h2 class="post-title">
+                            <a href="/post/{{id}}" class="post-link">{{title}}</a>
+                        </h2>
+                    </div>
+                    <hr class="post-divider">
+                    <div class="card-body post-content">
+                        <a href="/edit-post/{{id}}">
+                            <button class="btn btn-secondary">Edit Post</button>
+                        </a>
+                        <button class="btn btn-danger bg-custom-delete delete-post" data-post-id="{{id}}">Delete</button>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
     </div>
-    {{/each}}
 </main>

@@ -3,13 +3,13 @@ const { User } = require("../models");
 // Array of dummy blog post data
 const userData = [
   {
-    username: "user1",
-    email: "user1@example.com",
+    username: "Xandromus",
+    email: "xandromus@example.com",
     password: "password1",
   },
   {
-    username: "user2",
-    email: "user2@example.com",
+    username: "Lernantino",
+    email: "lernantino@example.com",
     password: "password2",
   },
 ];

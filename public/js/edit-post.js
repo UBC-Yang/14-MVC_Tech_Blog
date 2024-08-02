@@ -1,7 +1,6 @@
-// Get the post ID from the endpoint
-const post_id = window.location.toString().split("/")[
-    window.location.toString().split("/").length - 1
-  ];
+document.addEventListener('DOMContentLoaded', () => {
+  // Get the post ID from the URL
+  const post_id = window.location.toString().split("/").pop();
   
   // Update the post
   const updatePostFormHandler = async (event) => {
@@ -20,7 +19,7 @@ const post_id = window.location.toString().split("/")[
       if (response.ok) {
         document.location.replace("/dashboard"); 
       } else {
-        alert("Failed to update a post."); 
+        alert("Failed to update the post."); 
       }
     }
   };
@@ -36,19 +35,18 @@ const post_id = window.location.toString().split("/")[
     if (response.ok) {
       document.location.replace("/dashboard"); 
     } else {
-      alert("Failed to delete a post."); 
+      alert("Failed to delete the post."); 
     }
   };
   
   // Event listeners
   const updatePostButton = document.querySelector("#update-post");
-  
   if (updatePostButton) {
     updatePostButton.addEventListener("click", updatePostFormHandler);
   }
   
   const deletePostButton = document.querySelector("#delete-post");
-  
   if (deletePostButton) {
     deletePostButton.addEventListener("click", deletePostFormHandler);
   }
+});

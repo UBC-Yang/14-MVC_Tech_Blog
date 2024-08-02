@@ -1,0 +1,89 @@
+/* styles for the navigation bar */
+.navBar {
+    background-color: #333; 
+    padding: 1rem; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.navBar a, .navBar button {
+    color: white; 
+    text-decoration: none;
+    margin-right: 1rem; 
+    font-size: 1rem;
+}
+
+.navBar a:hover, .navBar button:hover {
+    text-decoration: underline; 
+}
+
+.navBar .no-button {
+    background: none; 
+    border: none; 
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    padding: 0;
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    margin-top: 2rem;
+}   
+
+/* Main content styles */
+main {
+    padding: 1rem; 
+}
+
+/* Adjust spacing and alignment for the dashboard header */
+.dashboard-header {
+    text-align: center; /* Center text */
+    margin-bottom: 1rem; /* Space below the title */
+}
+
+/* Card styles */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 15px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+.post-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+}
+
+.post-meta {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.post-divider {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.post-content {
+    font-size: 1rem;
+    color: #333;
+}

@@ -12,37 +12,42 @@ router.post('/', withAuth, async (req, res) => {
         });
         res.status(200).json(newComment);
     } catch (err) {
-        res.status(400).json(err);
+        console.error('Error creating comment:', err);
+        res.status(400).json({ message: 'Failed to create comment', error: err });
     }
 });
 
 // Update Comment
 router.put('/:id', withAuth, async (req, res) => {
     try {
-        const updateComment = await Comment.update(req.body, {
-            where: {id: req.params.id}
+        const [affectedRows] = await Comment.update(req.body, {
+            where: { id: req.params.id }
         });
-        if (!updateComment) {
-            res.status(404).json({ message: 'No comment found' })
+        if (affectedRows === 0) {
+            res.status(404).json({ message: 'No comment found' });
+            return;
         }
-        res.status(200).json(updateComment);
+        res.status(200).json({ message: 'Comment updated successfully' });
     } catch (err) {
-        res.status(400).json(err);
+        console.error('Error updating comment:', err);
+        res.status(400).json({ message: 'Failed to update comment', error: err });
     }
 });
 
 // Delete Comment
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-        const deleteComment = await Comment.destroy({
-            where: {id: req.params.id}
+        const affectedRows = await Comment.destroy({
+            where: { id: req.params.id }
         });
-        if (!deleteComment) {
+        if (affectedRows === 0) {
             res.status(404).json({ message: 'No comment found' });
+            return;
         }
-        res.status(200).json(deleteComment);
+        res.status(200).json({ message: 'Comment deleted successfully' });
     } catch (err) {
-        res.status(400).json(err);
+        console.error('Error deleting comment:', err);
+        res.status(400).json({ message: 'Failed to delete comment', error: err });
     }
 });
 

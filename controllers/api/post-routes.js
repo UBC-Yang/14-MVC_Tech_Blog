@@ -11,7 +11,8 @@ router.post('/', withAuth, async (req, res) => {
         });
         res.status(200).json(newPost);
     } catch (err) {
-        res.status(400).json(err);
+        console.error('Error creating post:', err);
+        res.status(400).json({ message: 'Error creating post', error: err });
     }
 });
 
@@ -21,13 +22,14 @@ router.put('/:id', withAuth, async (req, res) => {
         const updatePost = await Post.update(req.body, {
             where: { id: req.params.id }
         });
-        if (!updatePost) {
-            res.status(404).json({ message: 'No post found' });
-            return
+        if (!updatePost[0]) {
+            res.status(404).json({ message: 'No post found with this id!' });
+            return;
         }
         res.status(200).json(updatePost);
     } catch (err) {
-        res.status(500).json(err);
+        console.error('Error updating post:', err);
+        res.status(500).json({ message: 'Error updating post', error: err });
     }
 });
 
@@ -38,11 +40,13 @@ router.delete('/:id', withAuth, async (req, res) => {
             where: { id: req.params.id }
         });
         if (!deletePost) {
-            res.status(404).json({ message: 'No post found' });
+            res.status(404).json({ message: 'No post found with this id!' });
+            return;
         }
         res.status(200).json(deletePost);
     } catch (err) {
-        res.status(500).json(err);
+        console.error('Error deleting post:', err);
+        res.status(500).json({ message: 'Error deleting post', error: err });
     }
 });
 

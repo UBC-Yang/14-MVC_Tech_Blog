@@ -1,26 +1,26 @@
 <main class="container mt-5">
-  <h1 class="mb-4 text-dark">Edit Post</h1>
-  <form class="update-book-post-form" class="mb-3">
+  <form id="edit-post-form">
     <div class="mb-3">
-      <label for="title-update-post" class="form-label custom-text-color">Title</label>
+      <label for="title-update-post" class="form-label">Title:</label>
       <input
         type="text"
-        class="form-control"
         id="title-update-post"
-        placeholder="Enter Title"
+        name="title"
+        class="form-control"
         value="{{title}}"
       />
     </div>
     <div class="mb-3">
-      <label for="content-update-post" class="form-label custom-text-color">Content</label>
+      <label for="content-update-post" class="form-label">Content:</label>
       <textarea
-        class="form-control"
         id="content-update-post"
-        rows="3"
-        placeholder="Enter Content"
-      >{{synopsis}}</textarea>
+        name="content"
+        class="form-control"
+        rows="5"
+      >{{content}}</textarea>
     </div>
-    <button type="submit" id="update-post" class="btn btn-secondary">Update Post</button>
-    <button type="button" id="delete-post" class="btn bg-custom-delete">Delete Post</button>
+    <button id="update-post" type="submit" class="btn btn-primary">Update Post</button>
+    <button id="delete-post" type="button" class="btn btn-danger">Delete Post</button>
   </form>
 </main>
+

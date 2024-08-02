@@ -1,7 +1,7 @@
 const newPostFormHandler = async (event) => {
     event.preventDefault();
   
-    const title = document.querySelector('#title-book-post').value.trim();
+    const title = document.querySelector('#title-new-post').value.trim();
     const content = document.querySelector('#content-new-post').value.trim();
   
     if (title && content) {
